@@ -60,24 +60,17 @@ TEMPLATES = [
 WSGI_APPLICATION = "tree_menu.wsgi.application"
 
 
-"""
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME"),
+        "ENGINE": os.getenv("DB_ENGINE", default="django.db.backends.sqlite3"),
+        "NAME": os.getenv("DB_NAME", default=os.path.join(BASE_DIR, "db.sqlite3")),
         "USER": os.getenv("POSTGRES_USER"),
         "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
         "HOST": os.getenv("DB_HOST"),
         "PORT": os.getenv("DB_PORT"),
     }
 }
-"""
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,7 +103,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGGING = {
+"""LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
@@ -129,4 +122,4 @@ LOGGING = {
             'propagate': False,
         },
     },
-}
+}"""
