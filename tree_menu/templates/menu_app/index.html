@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% load custom_tags %}
+{% load menu_tag %}
 
-    {% if menus %}
-        <ul>
-            {% for menu in menus %}
-                <li><a href="{{ menu }}">{{ menu }}</a></li>
-            {% endfor %}
-        </ul>
-    {% elif menu_name %}
-        <h3><a href="{{ menu_name }}">В главное меню</a></h3>
-        {% draw menu menu_name menu_item%}
-    {% endif %}
-</body>
-</html>
+{% if menus %}
+  <ul>
+    {% for menu in menus %}
+      <li>
+        <a href='{{ menu }}'>{{ menu }}</a> - {{ menu.description }}
+      </li>
+    {% endfor %}
+  </ul>
+{% elif menu_name %}
+  <a href='/menu'>К выбору меню.</a>
+  {% draw_menu menu_name menu_item %}
+{% endif %}

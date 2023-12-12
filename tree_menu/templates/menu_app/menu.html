@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% for item in menu %}
-        {% if item.url %}
-            <li><a href='{{ item.url }}'>{{ item }}</a></li>
-        {% elif item.name %}
-            <li><a href='{{ item.name }}'>{{ item }}</a></li>
-        {% else %}
-            {% include 'app/menu.html' with menu=item %}
-        {% endif %}
-    {% endfor %}
-</body>
-</html>
+<ul>
+  {% for item in menu %}
+    {% if item.url %}
+      <li>
+        <a href='{{ item.url }}'>{{ item }}</a> - {{ item.description }} (Перейдет по ссылке: {{ item.url }})
+      </li>
+    {% elif item.name %}
+      <li>
+        <p><a href='{{ item.name }}'>{{ item }}</a> - {{ item.description }}
+        </p>
+      </li>
+    {% else %}
+      {% include 'menu_app/menu.html' with menu=item %}
+    {% endif %}
+  {% endfor %}
+</ul>
