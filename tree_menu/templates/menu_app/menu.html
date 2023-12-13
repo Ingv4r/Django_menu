@@ -6,8 +6,7 @@
       </li>
     {% elif item.name %}
       <li>
-        <p><a href='{{ item.name }}'>{{ item }}</a> - {{ item.description }}
-        </p>
+        <a href='{{ item.name }}'>{{ item }}</a> - {{ item.description }}
       </li>
     {% else %}
       {% include 'menu_app/menu.html' with menu=item %}

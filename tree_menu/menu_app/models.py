@@ -36,6 +36,7 @@ class MenuItem(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
+        db_index=True,
     )
     menu = models.ForeignKey(
         Menu,
