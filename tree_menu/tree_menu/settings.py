@@ -16,7 +16,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 ALLOWED_ORIGINS = ["http://*", "https://*"]
-CSRF_TRUSTED_ORIGINS = ["http://localhost:8080"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8000"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -25,7 +25,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "mptt",
     "menu_app",
+    "mptt_tree_menu",
 ]
 
 MIDDLEWARE = [
