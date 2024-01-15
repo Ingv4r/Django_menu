@@ -1,3 +1,5 @@
+[![Python](https://img.shields.io/badge/Python-v3.11.0-blue)](https://www.python.org/) 
+[![Django](https://img.shields.io/badge/Django-5.0-green)](https://www.djangoproject.com/)
 # Проект Django-menu: 
 
 ### Древовидное меню на Django, испоьзуя custom template tag.
